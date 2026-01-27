@@ -58,8 +58,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg">
-            <!-- Background image will be set via CSS or an actual img tag if needed -->
+        <div class="hero-bg" style="background-image: url('assets/images/hero.png');">
             <div class="hero-overlay"></div>
         </div>
         <div class="container">
@@ -82,8 +81,24 @@
         <div class="container">
             <div class="about-teaser-content" data-aos="fade-up">
                 <span class="motto-tag">Our Motto: Committed to Excellence</span>
-                <h2>A legacy of excellence in Karuri.</h2>
-                <p>Molding future leaders with character and competence through CBC excellence.</p>
+                <h2>A Legacy of Holistic Growth in Karuri.</h2>
+                <p>Since our inception, Upperhill Junior Academy has been a beacon of academic excellence and character
+                    formation. We don't just teach the curriculum; we mold giants who are ready to lead and innovate in
+                    a changing world.</p>
+                <div class="teaser-features grid grid-3 mb-30 text-left">
+                    <div class="feature-small">
+                        <span class="dot"></span>
+                        <p>21st Century Skills</p>
+                    </div>
+                    <div class="feature-small">
+                        <span class="dot"></span>
+                        <p>Values-Based Leadership</p>
+                    </div>
+                    <div class="feature-small">
+                        <span class="dot"></span>
+                        <p>Talent Nurturing</p>
+                    </div>
+                </div>
                 <a href="about.html" class="btn btn-primary">Read Our Full Story</a>
             </div>
         </div>
@@ -98,21 +113,55 @@
                     <span class="card-icon" data-aos="zoom-in" data-aos-delay="300">🧩</span>
                     <h3>Early Years</h3>
                     <p>Nurturing curiosity and creativity in our youngest learners through play-based discovery.</p>
-                    <a href="about.html" class="card-link">Explore Curriculum</a>
+                    <a href="javascript:void(0)" class="card-link curriculum-btn" data-level="earlyyears">Explore
+                        Curriculum</a>
                 </div>
                 <div class="interactive-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="boarding-badge badge-gold">Boarding avail. (G4+)</div>
                     <span class="card-icon" data-aos="zoom-in" data-aos-delay="400">📖</span>
                     <h3>Primary School</h3>
                     <p>Fostering critical thinking and core competencies in line with the high standard CBC framework.
                     </p>
-                    <a href="about.html" class="card-link">Explore Curriculum</a>
+                    <a href="javascript:void(0)" class="card-link curriculum-btn" data-level="primary">Explore
+                        Curriculum</a>
                 </div>
                 <div class="interactive-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="boarding-badge">Full Boarding</div>
                     <span class="card-icon" data-aos="zoom-in" data-aos-delay="500">🎓</span>
                     <h3>Junior School</h3>
                     <p>Preparing future leaders with advanced technical readiness and ethical leadership values.</p>
-                    <a href="about.html" class="card-link">Explore Curriculum</a>
+                    <a href="javascript:void(0)" class="card-link curriculum-btn" data-level="junior">Explore
+                        Curriculum</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boarding Teaser Section -->
+    <section id="boarding-teaser" class="boarding-teaser">
+        <div class="parallax-bg" style="background-image: url('assets/images/boarding.png');"></div>
+        <div class="parallax-overlay"></div>
+        <div class="container">
+            <div class="boarding-teaser-content" data-aos="fade-up">
+                <span class="motto-tag">Premier Boarding Available</span>
+                <h2>A Safe, Nurturing Home for Higher Grades.</h2>
+                <p>We provide comprehensive boarding facilities for Grade 4 to Grade 9 students, fostering independence
+                    through safe, supervised, and home-like living.</p>
+                <div class="teaser-features grid grid-3 mb-30 text-left">
+                    <div class="feature-small">
+                        <span class="dot"></span>
+                        <p>Supervised Prep</p>
+                    </div>
+                    <div class="feature-small">
+                        <span class="dot"></span>
+                        <p>Nutritious Meals</p>
+                    </div>
+                    <div class="feature-small">
+                        <span class="dot"></span>
+                        <p>24/7 Security</p>
+                    </div>
+                </div>
+                <a href="about.html#boarding" class="btn btn-primary">Explore Boarding Life</a>
             </div>
         </div>
     </section>
@@ -172,7 +221,7 @@
                 <!-- Bible Study -->
                 <div class="activity-card-premium">
                     <div class="activity-badge">Character</div>
-                    <div class="activity-img" style="background-color: #003300;"></div>
+                    <div class="activity-img" style="background-image: url('assets/images/bible-study.png');"></div>
                     <div class="activity-overlay">
                         <h4>Bible Study</h4>
                         <p>Nurturing spiritual growth and ethical values through engaging storytelling and reflections.
@@ -183,7 +232,7 @@
                 <!-- Technical Skills -->
                 <div class="activity-card-premium">
                     <div class="activity-badge">Technical</div>
-                    <div class="activity-img" style="background-color: #4a3728;"></div>
+                    <div class="activity-img" style="background-image: url('assets/images/wood-building.png');"></div>
                     <div class="activity-overlay">
                         <h4>Wood Building</h4>
                         <p>Creative hands-on crafts developing motor skills and structural understanding.</p>
@@ -193,7 +242,7 @@
                 <!-- Ballet -->
                 <div class="activity-card-premium">
                     <div class="activity-badge">Dance</div>
-                    <div class="activity-img" style="background-color: #550055;"></div>
+                    <div class="activity-img" style="background-image: url('assets/images/ballet.png');"></div>
                     <div class="activity-overlay">
                         <h4>Ballet</h4>
                         <p>Graceful expression and poise developed through classical dance foundations.</p>
@@ -203,7 +252,7 @@
                 <!-- Chess -->
                 <div class="activity-card-premium">
                     <div class="activity-badge">Indoor</div>
-                    <div class="activity-img" style="background-color: #333;"></div>
+                    <div class="activity-img" style="background-image: url('assets/images/chess.png');"></div>
                     <div class="activity-overlay">
                         <h4>Chess & Strategy</h4>
                         <p>Sharpening critical thinking, patience, and strategic planning through mental sport.</p>
@@ -213,7 +262,7 @@
                 <!-- Scouting -->
                 <div class="activity-card-premium">
                     <div class="activity-badge">Leadership</div>
-                    <div class="activity-img" style="background-color: #004400;"></div>
+                    <div class="activity-img" style="background-image: url('assets/images/scouting.png');"></div>
                     <div class="activity-overlay">
                         <h4>Scouts & Girl Guides</h4>
                         <p>Developing leadership, outdoor skills, and commitment to community service.</p>
@@ -284,7 +333,20 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="text-muted mt-20">* Note: Boarding section available at Ksh 10,000/- on admission.</p>
+                <div class="boarding-highlight mt-30" data-aos="fade-up">
+                    <div class="highlight-flex">
+                        <span class="highlight-icon">🏠</span>
+                        <div class="highlight-text">
+                            <h4>Premier Boarding Facility</h4>
+                            <p>We offer safe, nurturing boarding facilities for <strong>Grade 4 students and
+                                    above</strong>. A dedicated environment for focused learning and character building.
+                            </p>
+                        </div>
+                        <div class="highlight-price">Ksh 10,000/- <small>per term</small></div>
+                    </div>
+                </div>
+                <p class="text-muted mt-20">* Note: Boarding section available at Ksh 10,000/- on admission. Transport
+                    rates vary by distance (Banana, Muchatha, Ruaka, etc.)</p>
             </div>
 
             <!-- Transport & Payment -->
@@ -408,10 +470,35 @@
         </div>
     </footer>
 
+    <!-- Curriculum Modal -->
+    <div id="curriculumModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalLevelTitle">Curriculum Details</h2>
+                <p id="modalLevelDesc">Explore the subjects and learning areas offered.</p>
+            </div>
+            <div class="subjects-grid" id="subjectsGrid">
+                <!-- Subjects will be dynamically populated here -->
+            </div>
+            <div class="modal-footer">
+                <p class="text-muted small">* Based on 2025 KICD CBC Rationalized Curriculum</p>
+            </div>
+        </div>
+    </div>
+
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
 </body>
 
 </html>
