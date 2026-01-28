@@ -153,6 +153,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closeModal();
     });
 
+
+    // Hero Background Rotation
+    const heroSlider = document.getElementById('heroSlider');
+    if (heroSlider) {
+        const slides = heroSlider.querySelectorAll('.hero-slide');
+        let currentHeroSlide = 0;
+
+        const nextHeroSlide = () => {
+            slides[currentHeroSlide].classList.remove('active');
+            currentHeroSlide = (currentHeroSlide + 1) % slides.length;
+            slides[currentHeroSlide].classList.add('active');
+        };
+
+        setInterval(nextHeroSlide, 7000); // Shuffle every 7 seconds
+    }
+
     // Handle Form Submission placeholder
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {
