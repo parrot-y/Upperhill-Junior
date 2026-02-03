@@ -814,6 +814,42 @@ h3 {
     width: 100%;
 }
 
+.footer-social {
+    display: flex;
+    flex-direction: column;
+}
+
+.tiktok-container {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tiktok-embed {
+    margin: 0 !important;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #1877f2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+    color: white;
+}
+
 .footer-about h3,
 .footer-contact h3,
 .footer-links h3 {
