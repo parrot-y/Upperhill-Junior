@@ -122,6 +122,20 @@ h3 {
     letter-spacing: 2px;
 }
 
+.logo-img {
+    height: 50px;
+    max-height: 50px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    display: block;
+    transition: var(--transition);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--secondary-color);
