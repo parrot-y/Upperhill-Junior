@@ -46,9 +46,11 @@ h4 {
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* Typography */
@@ -288,10 +290,11 @@ h3 {
 .grid {
     display: grid;
     gap: 30px;
+    width: 100%;
 }
 
 .grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
 
 .bg-light {
@@ -310,9 +313,10 @@ h3 {
 
 .academics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 40px;
     margin-top: 60px;
+    width: 100%;
 }
 
 .interactive-card {
@@ -455,7 +459,7 @@ h3 {
 }
 
 .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
 }
 
 .info-item {
@@ -517,9 +521,10 @@ h3 {
 
 .activities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 20px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .activity-item {
@@ -575,7 +580,7 @@ h3 {
     width: 100%;
     border-collapse: collapse;
     background: var(--white);
-    min-width: 600px;
+    min-width: 0;
 }
 
 .modern-table th {
@@ -639,7 +644,7 @@ h3 {
 /* Uniform List */
 .uniform-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: 15px;
     list-style: none;
     margin-top: 20px;
@@ -657,9 +662,10 @@ h3 {
 /* Co-curricular Section Enhancement */
 .co-curricular-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
     gap: 20px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .co-activity-card {
@@ -788,9 +794,10 @@ h3 {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
     gap: 40px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .footer-about h3,
@@ -1328,8 +1335,9 @@ h3 {
 
 .subjects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
     gap: 25px;
+    width: 100%;
 }
 
 .subject-pill {
@@ -1572,5 +1580,475 @@ h3 {
 @media (max-width: 768px) {
     .boarding-teaser-content h2 {
         font-size: 2.2rem;
+    }
+}
+
+/* ============================================
+   MOBILE-FIRST RESPONSIVE FIXES
+   Eliminating horizontal scroll on all devices
+   ============================================ */
+
+/* Global overflow prevention */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+/* Mobile-first table fixes */
+@media (max-width: 768px) {
+    .modern-table {
+        min-width: unset;
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    .modern-table th,
+    .modern-table td {
+        padding: 10px 8px;
+        word-wrap: break-word;
+    }
+
+    .modern-table th {
+        font-size: 0.75rem;
+        letter-spacing: 0;
+    }
+
+    .table-badge {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 15px -15px;
+        padding: 0 15px;
+    }
+}
+
+/* Mobile grids - single column on small screens */
+@media (max-width: 600px) {
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .academics-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .co-curricular-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+
+    .uniform-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    .subjects-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Tablet grids - 2 columns */
+@media (min-width: 601px) and (max-width: 968px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile typography scaling */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 1.6rem !important;
+    }
+
+    h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .section-title {
+        margin-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .about-teaser-content h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .about-teaser-content p {
+        font-size: 1rem;
+    }
+
+    .boarding-teaser-content h2 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Mobile hero section */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .hero-small {
+        height: auto;
+        min-height: 50vh;
+        padding: 100px 20px 60px;
+    }
+
+    .hero-small h1 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Mobile cards and interactive elements */
+@media (max-width: 768px) {
+    .interactive-card {
+        padding: 40px 25px;
+        border-radius: 16px;
+    }
+
+    .card-icon {
+        font-size: 3rem;
+    }
+
+    .interactive-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .interactive-card p {
+        font-size: 1rem;
+    }
+
+    /* Activity cards on mobile */
+    .activity-card-premium {
+        height: 280px;
+        border-radius: 15px;
+    }
+
+    .activity-overlay h4 {
+        font-size: 1.2rem;
+    }
+
+    .activity-badge {
+        top: 12px;
+        left: 12px;
+        font-size: 0.65rem;
+        padding: 3px 10px;
+    }
+
+    /* Selling points */
+    .selling-point {
+        padding: 30px 15px;
+    }
+
+    .point-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Boarding highlight fix for mobile */
+@media (max-width: 768px) {
+    .highlight-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .highlight-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .highlight-text h4 {
+        font-size: 1.2rem;
+    }
+
+    .highlight-price {
+        margin-left: 0;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .highlight-pricing-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .term-price {
+        background: var(--primary-light);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Admissions steps mobile */
+@media (max-width: 600px) {
+    .admissions-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+        font-size: 1.5rem;
+    }
+
+    .step {
+        max-width: 100%;
+    }
+
+    .step-num {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Contact section mobile */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-form-wrapper {
+        padding: 25px 20px;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+
+    .info-item {
+        flex-wrap: wrap;
+    }
+
+    .info-item p {
+        word-break: break-word;
+    }
+}
+
+/* Payment card mobile */
+@media (max-width: 480px) {
+    .payment-card {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .paybill-num {
+        font-size: 1.5rem;
+    }
+}
+
+/* Modal mobile fixes */
+@media (max-width: 768px) {
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-container {
+        padding: 30px 15px;
+        border-radius: 20px;
+        max-height: 95vh;
+    }
+
+    .close-modal {
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .subject-pill {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .subject-icon {
+        font-size: 1.4rem;
+    }
+}
+
+/* Co-curricular cards mobile */
+@media (max-width: 480px) {
+    .co-activity-card {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .co-icon,
+    .v-icon {
+        font-size: 1.8rem;
+    }
+}
+
+/* About page specific mobile fixes */
+@media (max-width: 768px) {
+    .director-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .boarding-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .mv-item {
+        padding: 30px 20px;
+    }
+
+    .quote-style {
+        padding: 20px;
+    }
+
+    .quote-style p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Parallax sections on mobile - disable attachment for performance */
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+
+    .about-teaser {
+        padding: 80px 0;
+    }
+
+    .boarding-teaser {
+        padding: 80px 0;
+    }
+
+    #academics {
+        padding: 80px 0;
+        background-attachment: scroll;
+    }
+}
+
+/* Boarding badge mobile positioning */
+@media (max-width: 600px) {
+    .boarding-badge {
+        right: -25px;
+        padding: 6px 30px;
+        font-size: 0.65rem;
+    }
+}
+
+/* Footer mobile */
+@media (max-width: 600px) {
+    .main-footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-grid {
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+
+    .footer-about h3,
+    .footer-contact h3,
+    .footer-links h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+}
+
+/* Button mobile optimizations */
+@media (max-width: 480px) {
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-cta {
+        display: none;
+    }
+}
+
+/* Feature dots mobile */
+@media (max-width: 600px) {
+    .teaser-features.grid-3 {
+        gap: 10px;
+    }
+
+    .feature-small {
+        justify-content: flex-start;
+    }
+
+    .feature-small p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Scrollbar hidden on mobile for cleaner look */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+
+    * {
+        scrollbar-width: none;
     }
 }
