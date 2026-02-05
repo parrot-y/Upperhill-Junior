@@ -242,6 +242,16 @@ h3 {
     overflow: hidden;
     color: var(--white);
     text-align: center;
+    z-index: 1;
+}
+
+.boarding-teaser {
+    position: relative;
+    padding: 150px 0;
+    overflow: hidden;
+    color: var(--white);
+    text-align: center;
+    z-index: 1;
 }
 
 .parallax-bg {
@@ -989,6 +999,13 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    .main-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
     .mobile-toggle {
         display: flex;
     }
