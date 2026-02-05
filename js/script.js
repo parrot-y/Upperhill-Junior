@@ -166,12 +166,32 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextHeroSlide, 7000); // Shuffle every 7 seconds
     }
 
-    // Handle Form Submission placeholder
+    // Handle Form Submission - WhatsApp Integration
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you for your inquiry! We will get back to you soon.');
+
+            // Get form values
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            const name = inputs[0].value.trim();
+            const phone = inputs[1].value.trim();
+            const grade = inputs[2].value.trim();
+            const message = inputs[3].value.trim();
+
+            // WhatsApp Details
+            const whatsappNumber = "254114887022"; // 0114 887 022
+            const text = `Hello, I would like to make an enquiry.\n` +
+                `*Name:* ${name}\n` +
+                `*Phone:* ${phone}\n` +
+                `*Child's Grade:* ${grade}\n` +
+                `*Message:* ${message}`;
+
+            // Create URL
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+            // Redirect
+            window.open(url, '_blank');
             contactForm.reset();
         });
     }
