@@ -1108,6 +1108,73 @@ h3 {
     opacity: 0.9;
 }
 
+.payment-details-grid {
+    display: grid;
+    gap: 14px;
+    text-align: left;
+}
+
+.payment-account-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 100, 0, 0.12);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.payment-account-card h4 {
+    margin: 0 0 4px;
+    color: var(--primary-dark);
+    font-size: 1rem;
+}
+
+.account-bank {
+    margin: 0 0 12px;
+    color: var(--text-muted, #666);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.account-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-top: 1px dashed #d9e6d9;
+}
+
+.account-line span {
+    color: var(--text-muted, #666);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.account-line strong {
+    color: var(--primary-dark);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .payment-account-card {
+        padding: 14px;
+    }
+
+    .account-line {
+        flex-direction: column;
+        gap: 2px;
+        align-items: flex-start;
+    }
+
+    .account-line strong {
+        font-size: 1.05rem;
+    }
+}
+
 .fees-actions {
     display: flex;
     align-items: center;
@@ -2167,24 +2234,30 @@ body {
 }
 
 /* Gallery / Video Section */
+.gallery-section {
+    padding: 60px 0;
+}
+
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: 18px;
     width: 100%;
+    align-items: start;
 }
 
 .video-card {
     background: var(--white);
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
     border: 1px solid rgba(0, 100, 0, 0.08);
+    align-self: start;
 }
 
 .video-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary-light);
 }
@@ -2192,7 +2265,7 @@ body {
 .video-card video {
     display: block;
     width: 100%;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 2 / 3;
     object-fit: contain;
     background: #0b0b0b;
 }
@@ -2200,11 +2273,11 @@ body {
 @media (max-width: 600px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 12px;
     }
 
     .video-card {
-        border-radius: 15px;
+        border-radius: 14px;
     }
 }
 
