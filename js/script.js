@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = inputs[3].value.trim();
 
             // WhatsApp Details
-            const whatsappNumber = "254114887022"; // 0114 887 022
+            const whatsappNumber = "254181056318"; // 0181 056318
             const text = `Hello, I would like to make an enquiry.\n` +
                 `*Name:* ${name}\n` +
                 `*Phone:* ${phone}\n` +
